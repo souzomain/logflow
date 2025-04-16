@@ -2,6 +2,7 @@
 
 LogFlow é uma aplicação ETL (Extração, Transformação e Carregamento) especializada em processamento de logs, inspirada em ferramentas como Graylog e Logstash. A aplicação é capaz de receber logs de múltiplas fontes, processá-los através de transformações configuráveis e encaminhá-los para diferentes destinos de armazenamento ou análise.
 
+## 📊 Dashboard
 ![dashboard](images/dashboard.png)
 
 ## Características Principais
@@ -14,7 +15,7 @@ LogFlow é uma aplicação ETL (Extração, Transformação e Carregamento) espe
 - Interface de linha de comando
 - Alta performance e confiabilidade
 
-## Componentes Disponíveis
+## 🔌 Componentes Disponíveis
 
 ### Sources (Fontes)
 - **file**: Lê logs de arquivos locais com suporte a monitoramento contínuo (tail)
@@ -50,7 +51,7 @@ A interface web permite:
 - Monitorar métricas de processamento em tempo real
 - Carregar novas configurações
 
-## Instalação
+## 📦 Instalação
 
 ### Requisitos
 
@@ -71,7 +72,7 @@ poetry install
 poetry install --with dev
 ```
 
-## Uso Básico
+## 🚀 Uso Básico
 
 ### Executando com a CLI
 
@@ -95,7 +96,7 @@ poetry run logflow status
 poetry run logflow restart --pipeline simple-pipeline
 ```
 
-## Configuração
+## ⚙️ Configuração
 
 LogFlow utiliza arquivos YAML para configuração. Um exemplo básico:
 
@@ -137,7 +138,7 @@ batch_size: 100
 batch_timeout: 5.0
 ```
 
-## API REST
+## 🌐 API REST
 
 A API REST permite gerenciar o LogFlow programaticamente:
 
@@ -151,7 +152,7 @@ POST   /api/v1/pipelines/{id}/stop   # Parar uma pipeline
 GET    /api/v1/metrics           # Obter métricas do sistema
 ```
 
-## Desenvolvimento
+## 🧪 Desenvolvimento
 
 ### Executando Testes
 
@@ -165,7 +166,7 @@ poetry run pytest
 poetry run sphinx-build -b html docs/source docs/build
 ```
 
-## Arquitetura
+## 🏗️ Arquitetura
 
 A arquitetura do LogFlow é baseada em uma estrutura modular de plugins, dividida em três componentes principais:
 
