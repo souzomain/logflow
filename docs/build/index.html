@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LogFlow: Sistema de ETL para Processamento de Logs &mdash; LogFlow 0.1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2346ddef"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=71a39b36"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Buscar" href="search.html" />
+    <link rel="next" title="Introdução" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="#" class="icon icon-home">
+            LogFlow
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <p class="caption" role="heading"><span class="caption-text">Conteúdo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Instalação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuração</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Uso</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">LogFlow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Navegação da página">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">LogFlow: Sistema de ETL para Processamento de Logs</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/index.rst.txt" rel="nofollow"> Ver código-fonte da página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="logflow-sistema-de-etl-para-processamento-de-logs">
+<h1>LogFlow: Sistema de ETL para Processamento de Logs<a class="headerlink" href="#logflow-sistema-de-etl-para-processamento-de-logs" title="Link para este cabeçalho"></a></h1>
+<p>LogFlow é uma aplicação ETL (Extração, Transformação e Carregamento) especializada em processamento de logs, inspirada em ferramentas como Graylog e Logstash. A aplicação é capaz de receber logs de múltiplas fontes, processá-los através de transformações configuráveis e encaminhá-los para diferentes destinos de armazenamento ou análise.</p>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">Conteúdo:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introdução</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#visao-geral">Visão Geral</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#objetivos-principais">Objetivos Principais</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#arquitetura">Arquitetura</a></li>
+<li class="toctree-l2"><a class="reference internal" href="introduction.html#fluxo-de-processamento">Fluxo de Processamento</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Instalação</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#requisitos">Requisitos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#instalacao-com-poetry">Instalação com Poetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#instalacao-com-pip">Instalação com pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation.html#verificacao-da-instalacao">Verificação da Instalação</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuração</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#estrutura-de-configuracao">Estrutura de Configuração</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#configuracao-de-sources">Configuração de Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#configuracao-de-processors">Configuração de Processors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="configuration.html#configuracao-de-sinks">Configuração de Sinks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Uso</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#interface-de-linha-de-comando">Interface de Linha de Comando</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#api-rest">API REST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="usage.html#exemplo-de-uso-programatico">Exemplo de Uso Programático</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="indices-e-tabelas">
+<h1>Índices e tabelas<a class="headerlink" href="#indices-e-tabelas" title="Link para este cabeçalho"></a></h1>
+<ul class="simple">
+<li><p><a class="reference internal" href="genindex.html"><span class="std std-ref">Índice</span></a></p></li>
+<li><p><a class="reference internal" href="py-modindex.html"><span class="std std-ref">Índice do Módulo</span></a></p></li>
+<li><p><a class="reference internal" href="search.html"><span class="std std-ref">Página de Busca</span></a></p></li>
+</ul>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
+        <a href="introduction.html" class="btn btn-neutral float-right" title="Introdução" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Direitos autorais 2025, OpenHands.</p>
+  </div>
+
+  Compilado com <a href="https://www.sphinx-doc.org/">Sphinx</a> usando um
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    fornecido por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

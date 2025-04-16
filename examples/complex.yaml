@@ -1,0 +1,51 @@
+name: "complex-pipeline"
+
+sources:
+  - name: "json-logs"
+    type: "file"
+    config:
+      path: "/tmp/test.log"
+      tail: true
+      read_from_start: true
+      poll_interval: 0.5
+
+processors:
+  - name: "json-parser"
+    type: "json"
+    config:
+      field: "raw_data"
+      target_field: ""  # Add fields directly to the event
+      preserve_original: true
+      ignore_errors: true
+
+  - name: "filter-debug"
+    type: "filter"
+    config:
+      condition: "level != 'DEBUG'"
+      mode: "all"
+
+  - name: "add-metadata"
+    type: "json"
+    config:
+      field: "raw_data"
+      target_field: "metadata"
+      preserve_original: true
+
+sinks:
+  - name: "file-output"
+    type: "file"
+    config:
+      path: "/tmp/processed.log"
+      format: "json"
+      append: true
+
+  - name: "text-output"
+    type: "file"
+    config:
+      path: "/tmp/processed.txt"
+      format: "text"
+      append: true
+      template: "{timestamp} [{level}] {service}: {message}"
+
+batch_size: 10
+batch_timeout: 1.0

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Uso &mdash; LogFlow 0.1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2346ddef"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=71a39b36"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Buscar" href="search.html" />
+    <link rel="prev" title="Configuração" href="configuration.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            LogFlow
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <p class="caption" role="heading"><span class="caption-text">Conteúdo:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introdução</a></li>
+<li class="toctree-l1"><a class="reference internal" href="installation.html">Instalação</a></li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuração</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Uso</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#interface-de-linha-de-comando">Interface de Linha de Comando</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#iniciar-uma-pipeline">Iniciar uma Pipeline</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#verificar-o-status">Verificar o Status</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reiniciar-uma-pipeline">Reiniciar uma Pipeline</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#api-rest">API REST</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#iniciar-o-servidor-api">Iniciar o Servidor API</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#endpoints-da-api">Endpoints da API</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#exemplo-de-uso-programatico">Exemplo de Uso Programático</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LogFlow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Navegação da página">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Uso</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/usage.rst.txt" rel="nofollow"> Ver código-fonte da página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="uso">
+<h1>Uso<a class="headerlink" href="#uso" title="Link para este cabeçalho"></a></h1>
+<section id="interface-de-linha-de-comando">
+<h2>Interface de Linha de Comando<a class="headerlink" href="#interface-de-linha-de-comando" title="Link para este cabeçalho"></a></h2>
+<p>O LogFlow fornece uma interface de linha de comando (CLI) para gerenciar pipelines.</p>
+<section id="iniciar-uma-pipeline">
+<h3>Iniciar uma Pipeline<a class="headerlink" href="#iniciar-uma-pipeline" title="Link para este cabeçalho"></a></h3>
+<p>Para iniciar o LogFlow com um arquivo de configuração:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>logflow<span class="w"> </span>start<span class="w"> </span>--config<span class="w"> </span>pipeline.yaml
+</pre></div>
+</div>
+</section>
+<section id="verificar-o-status">
+<h3>Verificar o Status<a class="headerlink" href="#verificar-o-status" title="Link para este cabeçalho"></a></h3>
+<p>Para verificar o status das pipelines em execução:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>logflow<span class="w"> </span>status
+</pre></div>
+</div>
+</section>
+<section id="reiniciar-uma-pipeline">
+<h3>Reiniciar uma Pipeline<a class="headerlink" href="#reiniciar-uma-pipeline" title="Link para este cabeçalho"></a></h3>
+<p>Para reiniciar uma pipeline específica:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>logflow<span class="w"> </span>restart<span class="w"> </span>--pipeline<span class="w"> </span>webapp-logs
+</pre></div>
+</div>
+</section>
+</section>
+<section id="api-rest">
+<h2>API REST<a class="headerlink" href="#api-rest" title="Link para este cabeçalho"></a></h2>
+<p>O LogFlow também fornece uma API REST para gerenciamento programático.</p>
+<section id="iniciar-o-servidor-api">
+<h3>Iniciar o Servidor API<a class="headerlink" href="#iniciar-o-servidor-api" title="Link para este cabeçalho"></a></h3>
+<p>Para iniciar o servidor API:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-m<span class="w"> </span>logflow.api.routes
+</pre></div>
+</div>
+<p>Ou usando o script de exemplo:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>examples/run_api.py<span class="w"> </span>--port<span class="w"> </span><span class="m">8000</span>
+</pre></div>
+</div>
+</section>
+<section id="endpoints-da-api">
+<h3>Endpoints da API<a class="headerlink" href="#endpoints-da-api" title="Link para este cabeçalho"></a></h3>
+<p>A API REST permite gerenciar o LogFlow programaticamente:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/api/v1/pipelines</span></code>: Listar todas as pipelines</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/api/v1/pipelines</span></code>: Criar uma nova pipeline</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/api/v1/pipelines/{id}</span></code>: Obter detalhes de uma pipeline</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">DELETE</span> <span class="pre">/api/v1/pipelines/{id}</span></code>: Remover uma pipeline</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/api/v1/pipelines/{id}/start</span></code>: Iniciar uma pipeline</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">POST</span> <span class="pre">/api/v1/pipelines/{id}/stop</span></code>: Parar uma pipeline</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">GET</span> <span class="pre">/api/v1/metrics</span></code>: Obter métricas do sistema</p></li>
+</ul>
+</section>
+</section>
+<section id="exemplo-de-uso-programatico">
+<h2>Exemplo de Uso Programático<a class="headerlink" href="#exemplo-de-uso-programatico" title="Link para este cabeçalho"></a></h2>
+<p>O LogFlow também pode ser usado programaticamente em aplicações Python:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">asyncio</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">logflow.core.engine</span><span class="w"> </span><span class="kn">import</span> <span class="n">Engine</span>
+
+<span class="k">async</span> <span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+    <span class="c1"># Criar uma instância do engine</span>
+    <span class="n">engine</span> <span class="o">=</span> <span class="n">Engine</span><span class="p">()</span>
+
+    <span class="c1"># Carregar e iniciar uma pipeline</span>
+    <span class="k">await</span> <span class="n">engine</span><span class="o">.</span><span class="n">load_pipeline</span><span class="p">(</span><span class="s2">&quot;pipeline.yaml&quot;</span><span class="p">)</span>
+    <span class="k">await</span> <span class="n">engine</span><span class="o">.</span><span class="n">start_pipeline</span><span class="p">(</span><span class="s2">&quot;my-pipeline&quot;</span><span class="p">)</span>
+
+    <span class="c1"># Aguardar (em uma aplicação real, você faria algo útil aqui)</span>
+    <span class="k">await</span> <span class="n">asyncio</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mi">60</span><span class="p">)</span>
+
+    <span class="c1"># Parar a pipeline</span>
+    <span class="k">await</span> <span class="n">engine</span><span class="o">.</span><span class="n">stop_pipeline</span><span class="p">(</span><span class="s2">&quot;my-pipeline&quot;</span><span class="p">)</span>
+
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
+    <span class="n">asyncio</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">main</span><span class="p">())</span>
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
+        <a href="configuration.html" class="btn btn-neutral float-left" title="Configuração" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Direitos autorais 2025, OpenHands.</p>
+  </div>
+
+  Compilado com <a href="https://www.sphinx-doc.org/">Sphinx</a> usando um
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    fornecido por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

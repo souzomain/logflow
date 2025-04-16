@@ -1,0 +1,63 @@
+/* Dashboard styles */
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-header {
+    background-color: #f8f9fa;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+    font-weight: 500;
+}
+
+.table th {
+    font-weight: 600;
+    background-color: #f8f9fa;
+}
+
+.badge {
+    font-size: 0.9em;
+    padding: 0.5em 0.75em;
+}
+
+.badge-running {
+    background-color: #28a745;
+    color: white;
+}
+
+.badge-stopped {
+    background-color: #dc3545;
+    color: white;
+}
+
+.action-btn {
+    margin-right: 5px;
+}
+
+.navbar-brand {
+    font-weight: 600;
+}
+
+.card h2 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.card-title {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card h2 {
+        font-size: 2rem;
+    }
+}

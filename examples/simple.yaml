@@ -1,0 +1,35 @@
+name: "simple-pipeline"
+
+sources:
+  - name: "test-file"
+    type: "file"
+    config:
+      path: "/tmp/test.log"
+      tail: true
+      read_from_start: true
+
+processors:
+  - name: "json-parser"
+    type: "json"
+    config:
+      field: "raw_data"
+      target_field: "parsed"
+      preserve_original: true
+      ignore_errors: true
+
+  - name: "filter-debug"
+    type: "filter"
+    config:
+      condition: "level != 'DEBUG'"
+      mode: "all"
+
+sinks:
+  - name: "file-output"
+    type: "file"
+    config:
+      path: "/tmp/processed.log"
+      format: "json"
+      append: true
+
+batch_size: 100
+batch_timeout: 5.0

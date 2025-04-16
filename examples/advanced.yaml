@@ -1,0 +1,82 @@
+name: "advanced-pipeline"
+
+sources:
+  # Kafka source
+  - name: "kafka-logs"
+    type: "kafka"
+    config:
+      brokers: ["localhost:9092"]
+      topics: ["logs", "events"]
+      group_id: "logflow-consumer"
+      auto_offset_reset: "latest"
+      metadata:
+        environment: "production"
+        application: "web-service"
+
+  # S3 source
+  - name: "s3-logs"
+    type: "s3"
+    config:
+      bucket: "my-logs-bucket"
+      prefix: "app-logs/"
+      region: "us-east-1"
+      poll_interval: 300.0  # 5 minutes
+
+processors:
+  # Parse JSON logs
+  - name: "json-parser"
+    type: "json"
+    config:
+      field: "raw_data"
+      target_field: ""  # Add fields directly to the event
+      preserve_original: true
+      ignore_errors: true
+
+  # Filter out debug and info logs
+  - name: "filter-low-severity"
+    type: "filter"
+    config:
+      condition: "level in [WARNING, ERROR, CRITICAL]"
+      mode: "all"
+
+  # Add environment metadata
+  - name: "add-metadata"
+    type: "json"
+    config:
+      field: "raw_data"
+      target_field: "metadata"
+      preserve_original: true
+
+sinks:
+  # OpenSearch sink for searchable logs
+  - name: "opensearch-output"
+    type: "opensearch"
+    config:
+      hosts: ["https://opensearch:9200"]
+      index: "logs-{yyyy.MM.dd}"
+      username: "admin"
+      password: "admin"
+      ssl_verify: false
+      batch_size: 1000
+
+  # S3 sink for long-term storage
+  - name: "s3-archive"
+    type: "s3"
+    config:
+      bucket: "logs-archive"
+      key_prefix: "processed-logs"
+      region: "us-east-1"
+      format: "json"
+      buffer_size: 52428800  # 50 MB
+
+  # Local file sink for debugging
+  - name: "file-output"
+    type: "file"
+    config:
+      path: "/tmp/important-logs.txt"
+      format: "text"
+      append: true
+      template: "{timestamp} [{level}] {service}: {message}"
+
+batch_size: 500
+batch_timeout: 10.0

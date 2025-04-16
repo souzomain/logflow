@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="pt-BR" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Instalação &mdash; LogFlow 0.1.0</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=19f00094" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="_static/jquery.js?v=5d32c60e"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="_static/documentation_options.js?v=2346ddef"></script>
+        <script src="_static/doctools.js?v=9bcbadda"></script>
+        <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="_static/translations.js?v=71a39b36"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Índice" href="genindex.html" />
+    <link rel="search" title="Buscar" href="search.html" />
+    <link rel="next" title="Configuração" href="configuration.html" />
+    <link rel="prev" title="Introdução" href="introduction.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="index.html" class="icon icon-home">
+            LogFlow
+          </a>
+              <div class="version">
+                0.1.0
+              </div>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Pesquisar documentos" aria-label="Pesquisar documentos" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Menu de navegação">
+              <p class="caption" role="heading"><span class="caption-text">Conteúdo:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="introduction.html">Introdução</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Instalação</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#requisitos">Requisitos</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#instalacao-com-poetry">Instalação com Poetry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#instalacao-com-pip">Instalação com pip</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#verificacao-da-instalacao">Verificação da Instalação</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="configuration.html">Configuração</a></li>
+<li class="toctree-l1"><a class="reference internal" href="usage.html">Uso</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Menu de navegação móvel" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">LogFlow</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Navegação da página">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">Instalação</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/installation.rst.txt" rel="nofollow"> Ver código-fonte da página</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="instalacao">
+<h1>Instalação<a class="headerlink" href="#instalacao" title="Link para este cabeçalho"></a></h1>
+<section id="requisitos">
+<h2>Requisitos<a class="headerlink" href="#requisitos" title="Link para este cabeçalho"></a></h2>
+<ul class="simple">
+<li><p>Python 3.9 ou superior</p></li>
+<li><p>Poetry</p></li>
+</ul>
+</section>
+<section id="instalacao-com-poetry">
+<h2>Instalação com Poetry<a class="headerlink" href="#instalacao-com-poetry" title="Link para este cabeçalho"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Clonar o repositório</span>
+git<span class="w"> </span>clone<span class="w"> </span>https://github.com/organization/logflow.git
+<span class="nb">cd</span><span class="w"> </span>logflow
+
+<span class="c1"># Instalar dependências</span>
+poetry<span class="w"> </span>install
+
+<span class="c1"># Instalar em modo de desenvolvimento</span>
+poetry<span class="w"> </span>install<span class="w"> </span>--with<span class="w"> </span>dev
+</pre></div>
+</div>
+</section>
+<section id="instalacao-com-pip">
+<h2>Instalação com pip<a class="headerlink" href="#instalacao-com-pip" title="Link para este cabeçalho"></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># Instalar do PyPI</span>
+pip<span class="w"> </span>install<span class="w"> </span>logflow
+
+<span class="c1"># Ou instalar do repositório</span>
+pip<span class="w"> </span>install<span class="w"> </span>git+https://github.com/organization/logflow.git
+</pre></div>
+</div>
+</section>
+<section id="verificacao-da-instalacao">
+<h2>Verificação da Instalação<a class="headerlink" href="#verificacao-da-instalacao" title="Link para este cabeçalho"></a></h2>
+<p>Após a instalação, você pode verificar se o LogFlow está funcionando corretamente executando:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>logflow<span class="w"> </span>--version
+</pre></div>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Rodapé">
+        <a href="introduction.html" class="btn btn-neutral float-left" title="Introdução" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Anterior</a>
+        <a href="configuration.html" class="btn btn-neutral float-right" title="Configuração" accesskey="n" rel="next">Próximo <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Direitos autorais 2025, OpenHands.</p>
+  </div>
+
+  Compilado com <a href="https://www.sphinx-doc.org/">Sphinx</a> usando um
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">tema</a>
+    fornecido por <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+name: "windows-logs-pipeline"
+
+sources:
+  # Windows Event Log source
+  - name: "windows-events"
+    type: "winlog"
+    config:
+      mode: "file"  # file, directory, tcp
+      path: "/tmp/winlogbeat.json"
+      channels: ["Application", "System", "Security"]
+      level: 3  # Warning and above (3=Warning, 2=Error, 1=Critical)
+      poll_interval: 5.0
+      tail: true
+
+processors:
+  # Parse JSON logs
+  - name: "json-parser"
+    type: "json"
+    config:
+      field: "raw_data"
+      target_field: ""  # Add fields directly to the event
+      preserve_original: true
+      ignore_errors: true
+
+  # Extract fields using regex
+  - name: "extract-fields"
+    type: "regex"
+    config:
+      field: "message"
+      pattern: "User: (?<username>[\\w\\\\]+).*Source: (?<source>[\\w-]+)"
+      preserve_original: true
+      ignore_errors: true
+
+  # Use Grok patterns
+  - name: "grok-processor"
+    type: "grok"
+    config:
+      field: "message"
+      patterns:
+        - "%{TIMESTAMP_ISO8601:timestamp} %{LOGLEVEL:level} %{GREEDYDATA:message}"
+      preserve_original: true
+      ignore_errors: true
+
+  # Mutate fields
+  - name: "mutate-fields"
+    type: "mutate"
+    config:
+      add_fields:
+        environment: "production"
+        platform: "windows"
+      rename_fields:
+        computer_name: "hostname"
+      uppercase_fields:
+        - "level"
+      convert_fields:
+        event_id: "int"
+      strip_fields:
+        - "message"
+
+  # Enrich with additional data
+  - name: "enrich-data"
+    type: "enrich"
+    config:
+      enrich_type: "lookup"
+      source_field: "event_id"
+      target_field: "event_description"
+      lookup_table:
+        "4624": "Successful logon"
+        "4625": "Failed logon attempt"
+        "4634": "Logoff"
+        "4648": "Explicit credential logon"
+        "4672": "Special privileges assigned to new logon"
+        "4720": "User account created"
+        "4726": "User account deleted"
+        "4740": "User account locked out"
+      default_value: "Unknown event"
+
+  # Filter out low-severity events
+  - name: "filter-events"
+    type: "filter"
+    config:
+      condition: "level in [ERROR, CRITICAL] or event_id in [4625, 4740]"
+      mode: "any"
+
+sinks:
+  # Elasticsearch sink for searchable logs
+  - name: "elasticsearch-output"
+    type: "elasticsearch"
+    config:
+      hosts: ["http://localhost:9200"]
+      index: "windows-logs-{yyyy.MM.dd}"
+      username: "elastic"
+      password: "changeme"
+      ssl_verify: false
+
+  # Local file sink for debugging
+  - name: "file-output"
+    type: "file"
+    config:
+      path: "/tmp/windows-events.log"
+      format: "json"
+      append: true
+
+batch_size: 100
+batch_timeout: 5.0
